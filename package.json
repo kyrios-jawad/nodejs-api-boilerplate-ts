@@ -6,11 +6,14 @@
   "scripts": {
     "start": "node build/app.js",
     "dev": "nodemon app/app.ts",
+    "apidoc": "apidoc -i app -o apidoc",
     "build": "tsc -p ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/cors": "^2.8.12",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.1"
   },
