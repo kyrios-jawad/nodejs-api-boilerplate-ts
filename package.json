@@ -9,7 +9,7 @@
     "apidoc": "apidoc -i app -o apidoc",
     "build": "tsc -p ."
   },
-  "author": "",
+  "author": "Maksof Jawad",
   "license": "ISC",
   "dependencies": {
     "@types/bcrypt": "^5.0.0",
