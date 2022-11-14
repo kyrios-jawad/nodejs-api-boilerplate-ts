@@ -1,10 +1,10 @@
-import dotenv from "dotenv";
-dotenv.config();
 import bodyParser from "body-parser";
 import cors from "cors";
-import express, { NextFunction, Request, Response } from "express";
-import routes from './routes/index.routes';
+import dotenv from "dotenv";
+import express, { NextFunction, Response } from "express";
 import { config } from "./config/config";
+import routes from './routes/index.routes';
+dotenv.config();
 const app = express();
 
 
@@ -31,8 +31,8 @@ app.use((error: any, res: Response, next: NextFunction) => {
         next(error);
     }
 });
-app.listen(config.port || 3000 , () => {
-    console.log(`App is running at http://localhost:${config.port} in ${process.env.NODE_ENV} mode`,);
+app.listen(config.port || 3000, () => {
+    console.log(`App is running at http://localhost:${config.port} in ${config.mode} mode`,);
     console.log(`Press CTRL-C to stop\n`);
 });
 export default app;

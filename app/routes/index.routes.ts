@@ -1,8 +1,11 @@
 import { Router } from "express";
-import * as auth from "../controller/auth.controller";
-import errorHandler from "../middleware/errorHandller";
+import admin from "./admin.routes";
+import user from "./user.routes";
+
+
 const router: Router = Router();
 
-router.post("/health",errorHandler(auth.health));
+router.use("/user", user);
+router.use("/admin", admin);
 
 export default router;

@@ -4,7 +4,7 @@ function errorHandler(func :any) {
         try {
             await func(req, res);
         } catch (err : any) {
-            res.status(500).send({ success: false, message: err.message });
+            res.status(Number(res.status) || 500).send({ success: false, message: err.message });
         }
 	};
 }
